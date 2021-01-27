@@ -14,6 +14,7 @@
             user-select: none;
             color: var(--primary-text-color);
             font-size: large;
+            overflow: hidden;
         }
 
         h1 {
@@ -28,6 +29,7 @@
             --primary-button-color: #eeeeee;
             --secondary-text-color: black;
             --border-color: white;
+            --three-text-color: black;
         }
 
         .dark {
@@ -38,18 +40,24 @@
             --primary-button-color: #7e7b7b;
             --secondary-text-color: black;
             --border-color: #424242;
+            --three-text-color: white;
         }
 
         button {
-            flex-direction: column;
+            /*flex-direction: column;*/
             /*flex-wrap: nowrap;
             flex-basis: auto;
             justify-content: space-between;/*/
+            margin: 30px;
+            font-size: 20px;
+            color: var(--three-text-color);
+            left: calc((100vw - 250px) / 2);
+            position: relative;
         }
 
         @media(max-width: 300px) {
             button {
-                flex-direction: column;
+                /*flex-direction: column;/**/
                 flex-wrap: nowrap;
                 flex-basis: auto;
             }
@@ -63,7 +71,8 @@
 
         .container {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
+            flex-direction: column;
         }
 
         .header {
@@ -127,7 +136,8 @@
         .hidden {
             display: none;
         }
-        .login-page{
+
+        .login-page {
             width: 400px;
             height: 600px;
             background-color: var(--primary-color);
@@ -138,7 +148,8 @@
             align-content: center;
             justify-content: center;
         }
-        .login-page input{
+
+        .login-page input {
             border: var(--border-color) 1px solid;
             outline: 0;
             position: relative;
@@ -151,6 +162,188 @@
             border-radius: 10px;
             top: 100px;
         }
+
+        .cancle-button {
+            width: 200px;
+            height: 45px;
+            background-image: linear-gradient(rgb(235, 36, 29), rgb(214, 103, 103));
+            position: relative;
+            top: 205px;
+            z-index: 100;
+            left: calc((400px - 200px) / 2);
+            border-radius: 20px;
+            color: #424242;
+            text-align: center;
+        }
+
+        .login-button {
+            width: 200px;
+            height: 45px;
+            background-image: linear-gradient(rgb(29, 67, 235), rgb(92, 195, 230));
+            position: relative;
+            top: 200px;
+            z-index: 100;
+            left: calc((400px - 200px) / 2);
+            border-radius: 20px;
+            color: #424242;
+            text-align: center;
+        }
+
+        .login-button h3 {
+            font-family: sans-serif;
+            position: relative;
+            top: 10px;
+        }
+
+        .cancle-button h3 {
+            font-family: sans-serif;
+            position: relative;
+            top: 10px;
+        }
+
+        .login-page h4 {
+            font-family: sans-serif;
+            color: rgb(228, 228, 100);
+            position: absolute;
+            top: 70px;
+            left: 90px;
+        }
+
+        #Settings {
+            position: fixed;
+            right: 10px;
+            top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 100px;
+            height: 30px;
+            color: var(--secondary-text-color);
+            justify-content: center;
+            text-align: center;
+        }
+
+        #Settings h3 {
+            position: relative;
+            vertical-align: middle;
+            bottom: 17px;
+            font-family: sans-serif;
+        }
+
+        #Import {
+            position: fixed;
+            left: 10px;
+            top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 100px;
+            height: 30px;
+            color: var(--secondary-text-color);
+            justify-content: center;
+            text-align: center;
+            display: block;
+        }
+
+        #Import h3 {
+            position: relative;
+            vertical-align: middle;
+            bottom: 17px;
+            font-family: sans-serif;
+        }
+
+        /*#SettingsPanel {
+            width: 300px;
+            height: 40px;
+            background-color: var(--primary-color);
+            position: fixed;
+            border: var(--border-color) 1px solid;
+            right: 10px;
+            top: calc((100vh - 600px) / 2);
+            align-content: center;
+            justify-content: center;
+        }
+
+        #SettingsPanelTriangle {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+
+            border-bottom: var(--primary-button-color) 15px solid;
+            position: fixed;
+            right: 40px;
+            top: 60px;
+        }
+        #SettingsPanel{
+
+        }*/
+        .Import-page {
+            width: 600px;
+            height: 600px;
+            background-color: var(--primary-color);
+            position: fixed;
+            border: var(--border-color) 1px solid;
+            left: calc((100vw - 600px) / 2);
+            top: calc((100vh - 600px) / 2);
+        }
+
+        .import-button {
+            width: 200px;
+            height: 45px;
+            background-image: linear-gradient(rgb(29, 67, 235), rgb(92, 195, 230));
+            position: fixed;
+            bottom: 170px;
+            z-index: 100;
+            left: calc((100vw - 200px) / 2);
+            border-radius: 20px;
+            color: #424242;
+            text-align: center;
+        }
+
+        .import-button h3 {
+            font-family: sans-serif;
+            position: relative;
+            bottom: 10px;
+        }
+
+        .cancel-button {
+            width: 200px;
+            height: 45px;
+            background-image: linear-gradient(rgb(235, 36, 29), rgb(214, 103, 103));
+            position: fixed;
+            bottom: 100px;
+            z-index: 100;
+            left: calc((100vw - 200px) / 2);
+            border-radius: 20px;
+            color: #424242;
+            text-align: center;
+        }
+
+        .cancel-button h3 {
+            font-family: sans-serif;
+            position: relative;
+            bottom: 10px;
+        }
+
+        .Import-page input {
+            display: block;
+            position: relative;
+            left: 200px;
+        }
+
+        #img-preview {
+            max-width: 300px;
+            position: relative;
+            max-height: 300px;
+            top: 35px;
+            left: calc((600px - 300px) / 2);
+        }
+        button{
+            width: 200px;
+            height: 45px;
+            border-radius: 20px;
+            /*color: #424242;*/
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -161,6 +354,13 @@
             <div id="login">
                 <!--<img src="https://i.ibb.co/LSy8YHk/you-avatar-image-dis.png">-->
                 <h3>Log in</h3>
+            </div>
+            <div id="Import">
+                <!--<img src="https://i.ibb.co/LSy8YHk/you-avatar-image-dis.png">-->
+                <h3>Import</h3>
+            </div>
+            <div id="Settings" class="hidden">
+                <h3>Export</h3>
             </div>
         </div>
         <div class="content">
@@ -177,9 +377,41 @@
     </div>
     <div class="login-page hidden">
         <h1>Login</h1>
-        <input id="name" placeholder="Your name...">
-        <input id="email" placeholder="Your email adress...">
-        <input id="password" placeholder="Your password...">
+        <h4 class="hidden error-log-in" id="error-log-uin">Please fill the fields below!</h4>
+        <input id="name" placeholder="Your name..." required>
+        <input id="email" placeholder="Your email adress..." required>
+        <input id="password" placeholder="Your password..." required>
+        <div class="login-button">
+            <!--<input type="submit">-->
+            <h3>Log in</h3>
+        </div>
+        <div class="cancle-button">
+            <h3>Cancel</h3>
+        </div>
+    </div>
+
+    <div id="SettingsPanel" class="hidden">
+        <div id="SettingsPanelTriangle">
+
+        </div>
+        <div class="Export-btn">
+            <h3>Export</h3>
+        </div>
+        <!--rn-->
+    </div>
+
+    <div class="Import-page hidden">
+        <h1>Import Image</h1>
+        <input type="file" class="import-file" accept=".png, .jpg, .jpeg, .jfif" onchange="loadfile(event)">
+        <img id="img-preview">
+        <!--src="E:Orar2infoicopng">-->
+        <div class="import-button">
+            <!--<input type="submit">-->
+            <h3>Import</h3>
+        </div>
+        <div class="cancel-button">
+            <h3>Cancel</h3>
+        </div>
     </div>
 
     <script>
@@ -211,6 +443,93 @@
         });
         document.getElementById("login").addEventListener("click", function () {
             document.getElementsByClassName("login-page")[0].classList.remove("hidden");
+            document.getElementById("other").style.filter = "blur(8px)";
+        });
+
+        function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        // Start file download.
+        //download("hello.txt", "This is the content of my file :)");
+        let name;
+        document.getElementsByClassName("login-button")[0].addEventListener("click", function () {
+            if (document.getElementById("name").value != "" && document.getElementById("email").value != "" && document.getElementById("password").value != "") {
+                logIn();
+                name = document.getElementById("name").value;
+            } else {
+                document.getElementsByClassName("error-log-in")[0].classList.remove("hidden");
+                document.getElementsByClassName("lihght")[0].style.backgroundImage = "url('" + src + "')";
+            }
+        });
+
+        function logIn() {
+            document.getElementById("login").classList.add("hidden");
+            document.getElementsByClassName("login-page")[0].classList.add("hidden");
+            document.getElementById("Settings").classList.remove("hidden");
+            document.getElementById("other").style.filter = "none";
+        }
+        document.getElementById("Settings").addEventListener("click", function () {
+            download("PayCalMoney.txt", "Name: " + name + "   " + "Account Money: " + money);
+        });
+        document.getElementsByClassName("cancle-button")[0].addEventListener("click", function () {
+            document.getElementById("login").classList.remove("hidden");
+            document.getElementsByClassName("login-page")[0].classList.add("hidden");
+            document.getElementById("other").style.filter = "none";
+        });
+        document.getElementsByClassName("cancel-button")[0].addEventListener("click", function () {
+            document.getElementsByClassName("Import-page")[0].classList.add("hidden");
+            document.getElementById("other").style.filter = "none";
+        });
+        const chooseFile = document.getElementsByClassName("import-file");
+        const imgPreview = document.getElementById("img-preview");
+        // chooseFile[0].addEventListener("change", function () {
+        //getImgData();
+        //imgPreview.setAttribute("src", chooseFile.value);
+        // });/*/
+        /*function getImgData() {
+            const files = chooseFile.files[0];
+            if (files) {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(files);
+                fileReader.addEventListener("load", function () {
+                    //imgPreview.style.display = "block";
+                    imgPreview.innerHTML = '<img src="' + this.result + '" />';
+                    //imgPreview.setAttribute("src", this.result);
+                });
+            }
+        }*/
+        /*var loadFile = function (event) {
+            imgPreview.src = URL.createObjectURL(event.target.files[0]);
+            imgPreview.onload = function () {
+                URL.revokeObjectURL(imgPreview.src) // free memory
+            }
+        };*/
+        /*document.getElementsByClassName("import-button")[0].addEventListener("click", function () {
+            //imgPreview.src = URL.createObjectURL(event);
+           // var url = URL.createObjectURL(this.files);
+            //const mediaStream = new mediaStream();
+            //imgPreview.srcObject = mediaStream;
+            //imgPreview.srcObject = this.files[0] + "/" + this.filename;
+            document.body.style.background = "url(" + imgPreview.srcObject + ") no-repeat";
+            /*document.body.style.backgroundImage = 'url("' + imgPreview.src + '")';*/
+        //console.log(imgPreview.src);
+        //  });*/
+        document.getElementsByClassName("import-button")[0].addEventListener("click", function () {
+            document.getElementsByClassName("Import-page")[0].classList.add("hidden");
+            document.getElementById("other").style.filter = "none";
+        });
+        document.getElementById("Import").addEventListener("click", function () {
+            document.getElementsByClassName("Import-page")[0].classList.remove("hidden");
             document.getElementById("other").style.filter = "blur(8px)";
         });
     </script>

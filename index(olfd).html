@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paypal</title>
+    <style>
+        input {
+            display: none;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            align-items: center;
+            user-select: none;
+            color: var(--primary-text-color);
+            font-size: large;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .lihght {
+            --primary-color: #424242;
+            --primary-text-color: white;
+            --header-color: lightblue;
+            --primary-button-color: #eeeeee;
+            --secondary-text-color: black;
+            --border-color: white;
+        }
+
+        .dark {
+            /*--primary-color: #ada4a4;*/
+            --primary-color: #e6e5e3;
+            --primary-text-color: black;
+            --header-color: blue;
+            --primary-button-color: #7e7b7b;
+            --secondary-text-color: black;
+            --border-color: #424242;
+        }
+
+        button {
+            flex-direction: column;
+            /*flex-wrap: nowrap;
+            flex-basis: auto;
+            justify-content: space-between;/*/
+        }
+
+        @media(max-width: 300px) {
+            button {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                flex-basis: auto;
+            }
+
+            .container {
+                justify-content: unset;
+                display: flex;
+                justify-items: baseline;
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .header {
+            background-color: var(--header-color);
+            height: 70px;
+            width: 100vw;
+            position: fixed;
+            left: 0;
+            top: 0;
+            align-items: stretch;
+        }
+
+        .content {
+            top: 70px;
+            position: relative;
+        }
+
+        button {
+            width: 100px;
+            height: 20px;
+            outline: none;
+            border: 0;
+            background-color: var(--primary-button-color);
+            text-align: center;
+            text-justify: newspaper;
+            text-emphasis: inherit;
+            text-decoration: double;
+        }
+
+        .header h1 {
+            position: relative;
+            bottom: 10px;
+        }
+
+        /*#login img{
+            width: 50px;
+            height: 50px;
+            fill: white;
+            position: relative;
+        }*/
+        #login {
+            position: fixed;
+            right: 10px;
+            top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 100px;
+            height: 30px;
+            color: var(--secondary-text-color);
+            justify-content: center;
+            text-align: center;
+        }
+
+        #login h3 {
+            position: relative;
+            vertical-align: middle;
+            bottom: 17px;
+            font-family: sans-serif;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .login-page{
+            width: 400px;
+            height: 600px;
+            background-color: var(--primary-color);
+            position: fixed;
+            border: var(--border-color) 1px solid;
+            left: calc((100vw - 400px) / 2);
+            top: calc((100vh - 600px) / 2);
+            align-content: center;
+            justify-content: center;
+        }
+        .login-page input{
+            border: var(--border-color) 1px solid;
+            outline: 0;
+            position: relative;
+            background-color: var(--primary-color);
+            display: block;
+            left: calc((400px - 200px) / 2);
+            width: 200px;
+            margin: 10px;
+            height: 30px;
+            border-radius: 10px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body class="dark | lihght">
+    <div id="other">
+        <div class="header">
+            <h1>Paycal</h1>
+            <div id="login">
+                <!--<img src="https://i.ibb.co/LSy8YHk/you-avatar-image-dis.png">-->
+                <h3>Log in</h3>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Your account: <h1 id="moneyh1"></h1>
+                <h1></h1>
+            </h1>
+            <div class="container">
+                <button>Cheltuie</button>
+                <button>Muncesete</button>
+                <input type="number" placeholder="suma de cheltuie si de muncesete">
+                <button>Change tema</button>
+            </div>
+        </div>
+    </div>
+    <div class="login-page hidden">
+        <h1>Login</h1>
+        <input id="name" placeholder="Your name...">
+        <input id="email" placeholder="Your email adress...">
+        <input id="password" placeholder="Your password...">
+    </div>
+
+    <script>
+        let money = 99999999999;
+        let extractsum = document.getElementsByTagName("input")[0].value;
+        document.getElementById("moneyh1").innerHTML = money + "$";
+        document.getElementsByTagName("button")[0].addEventListener("click", function () {
+            money -= extractsum;
+            if (extractsum.length == "0") {
+                money--;
+            }
+            //console.log("merje");
+            console.debug(money);
+            console.log(extractsum);
+            document.getElementById("moneyh1").innerHTML = money + "$";
+        });
+        document.getElementsByTagName("button")[1].addEventListener("click", function () {
+            money += extractsum;
+            if (extractsum.length == "0") {
+                money++;
+            }
+            //console.log("merje");
+            console.debug(money);
+            console.log(extractsum);
+            document.getElementById("moneyh1").innerHTML = money + "$";
+        });
+        document.getElementsByTagName("button")[2].addEventListener("click", function () {
+            document.body.classList.toggle("dark");
+        });
+        document.getElementById("login").addEventListener("click", function () {
+            document.getElementsByClassName("login-page")[0].classList.remove("hidden");
+            document.getElementById("other").style.filter = "blur(8px)";
+        });
+    </script>
+</body>
+
+</html>
